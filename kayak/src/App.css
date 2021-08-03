@@ -1,0 +1,14 @@
+.nav-container {
+    padding: 19px 16px; 
+    background-color: white;
+}
+
+.home-container {
+    padding: 67px 94px 0px 94px;
+    background-color: #F9FAFB;
+    height: 100%;
+}
+
+.airline-header {
+    margin-bottom: 73px;
+}

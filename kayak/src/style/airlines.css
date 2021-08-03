@@ -1,0 +1,33 @@
+
+
+.checkbox-container {
+    display: flex;
+}
+
+.filter-container {
+    margin-bottom: 56px;
+}
+
+.filter-header {
+    margin-bottom: 23px;
+}
+
+.filter-checkbox {
+    margin-right: 24px;
+    display: flex;
+}
+
+.filter-label {
+    margin-left: 10px ;    
+}
+
+.filter-input {
+    height: 20px;
+    width: 20px;
+}
+
+.card-effects {
+    box-shadow: 1px 1px 4px lightgrey;
+    background-color: white
+    /* border: 1px solid rgb(206 206 206 / 13%); */
+  }
