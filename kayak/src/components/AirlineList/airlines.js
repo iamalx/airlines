@@ -29,15 +29,21 @@ const projects = [
         linkName: 'Repo'
     },]
 
-function Airlines() {
+    let i = ''
+function Airlines({ airlineList }) {
+    console.log(airlineList)
+    // domain not provided in json res;
+    const imgDomain = 'https://content.r9cdn.net';
+
     return (
         <Container>
         <Row>
-            {projects.map(elem => (
-                <Col key={elem.title} xs={12} sm={6} md={3}>
-                    <Card style={{ width: '300px' }} className='card-effects'>
-                        <Card.Body>
-                            <Card.Title>{elem.title}</Card.Title>
+            {airlineList.map((elem, i) => (
+                <Col key={elem.code} xs={12} sm={6} md={3} className='card-col'>
+                    <Card style={{ width: '300px', height: '240px' }} className='card-effects'>
+                        <Card.Body className='card-body'>
+                            <img className='airline-img' src={imgDomain + elem.logoURL} alt={elem.name} />
+                            <Card.Title className='airline-name'>{elem.name}</Card.Title>
                                 {/* <Card.Text>
                                     {elem.text}
                                 </Card.Text> */}

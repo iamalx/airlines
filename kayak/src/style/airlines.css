@@ -26,8 +26,36 @@
     width: 20px;
 }
 
+.card-col {
+ padding: 0px 6px;    
+}
+
 .card-effects {
     box-shadow: 1px 1px 4px lightgrey;
-    background-color: white
+    background-color: white;
+    margin: 0px;
+    width: 300px;
+    height: 240px; 
     /* border: 1px solid rgb(206 206 206 / 13%); */
-  }
+}
+
+.card-body {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center ;
+}
+
+.airline-img {
+    width: 32px;
+    height: 32px;
+}
+
+.ariline-name {
+    margin: auto;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+    opacity: 0;
+    line-height: 10px;
+}
