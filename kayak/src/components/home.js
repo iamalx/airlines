@@ -7,7 +7,7 @@ import fetchJsonp from 'fetch-jsonp';
 const Home = () => {
     const api = 'https://kayak.com/h/mobileapis/directory/airlines/homework?callback=jsonp';
     const [ airlines , setAirlines ] = useState([]);
-    const [ filteredAirlines, setFilteredAirlines ] = useState([])
+    const [ filteredAirlines, setFilteredAirlines ] = useState([]);
     
     const getAirlines = async ()  => {
         const dataStream = await fetchJsonp(api,  { jsonpCallback: 'jsonp' });
