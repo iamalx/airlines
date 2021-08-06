@@ -1,36 +1,36 @@
-import Filter from './AirlineList/filter';
-import Airlines from './AirlineList/airlines';
 import '../App.css';
 import React, { useEffect, useState } from "react";
-import useJSONP from 'use-jsonp';
+import Filter from './AirlineList/filter';
+import Airlines from './AirlineList/airlines';
+import fetchJsonp from 'fetch-jsonp';
 
 const Home = () => {
-    
-    const [ airlines , setAirlines ] = useState([])
-
     const api = 'https://kayak.com/h/mobileapis/directory/airlines/homework?callback=jsonp';
+    const [ airlines , setAirlines ] = useState([]);
+    const [ filteredAirlines, setFilteredAirlines ] = useState([])
     
-    const getAirlines =  (data)  => {
-        console.log(data)
-        return data
+    const getAirlines = async ()  => {
+        const dataStream = await fetchJsonp(api,  { jsonpCallback: 'jsonp' });
+        const airlines = await dataStream.json();
+        setAirlines(airlines);
     };
 
-    const sendJsonP =  useJSONP({
-        url: api,
-        callback: data => setAirlines(data),
-        callbackParam: "jsonp",
-    })
-
+    const fliterByAlliences = (selectedAlliences) => {
+        const filteredList = airlines.filter(airline => {
+            return selectedAlliences.includes(airline.alliance);
+        })  
+        setFilteredAirlines(filteredList);
+    };
 
     useEffect(() => {
-        sendJsonP();
+        getAirlines();
     }, []);
-
+    
     return (
         <div className='home-container'>
             <h1 className='airline-header'>Airlines</h1>
-            <Filter></Filter>
-            <Airlines airlineList={airlines}></Airlines>
+            <Filter fliterByAlliences={fliterByAlliences}></Filter>
+            <Airlines airlineList={filteredAirlines.length > 0 ? filteredAirlines : airlines }></Airlines>
         </div>
     );
 }

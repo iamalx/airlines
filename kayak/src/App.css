@@ -6,9 +6,14 @@
 .home-container {
     padding: 67px 94px 0px 94px;
     background-color: #F9FAFB;
-    height: 100%;
+    min-height: calc( 100vh - 65px );
 }
 
 .airline-header {
     margin-bottom: 73px;
+    font-family:  HelveticaNeue, sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    color: #000;
 }
+

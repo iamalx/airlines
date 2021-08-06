@@ -1,7 +1,6 @@
 import '../App.css';
 
 function Nav() {
-
     return (
         <div className='nav-container'>
             <svg id='kayak-svg' width="125" height="24" viewBox="0 0 125 24" fill="none" xmlns="http://www.w3.org/2000/svg">
